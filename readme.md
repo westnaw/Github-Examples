@@ -46,7 +46,68 @@ git clone https://github.com/westnaw/Github-Examples.git
 cd Github-Examples
 ```
 
+> You'll need to generate a Personal Access Token (PAT)
+https://github.com/settings/token
+
+You will use the PAT as your password when you login
+-Give it access to Contents for Commits
+
+### SSH
+```ssh
+git@github.com:westnaw/Github-Examples.git
+```
+We will need to create our own SSH rsa key pair
+
+```
+ssh-keygen -t rsa
+```
+
+For WSL users and if you create a non default key you might need to add it
+
+```sh
+eval `ssh-agent`
+ssh-add /home/ander/.ssh/alt-github_id_rsa
+```
+
+
+We can test our connection here:
+```
+ssh -T git@github.com
+```
+
+### Github CLI
+
+Install the CLI
+eg. Linux
+
+Need to install package first
+```
+sudo apt update
+sudo apt install gh
+```
+
+```
+gh auth login
+gh clone
+```
+
 ## Branches
+
+list of branches
+```
+git branch
+```
+
+create a new branch
+```
+git branch branch-name
+```
+
+Checkout the branch
+```
+git checkout branch-name
+```
+ 
 
 ## Remotes
 
